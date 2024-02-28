@@ -4,6 +4,7 @@ TryHackMe Chocolate Factory WriteUp
 first we scan the machine using nmap using the command: nmap -sV [IP HERE]
 
 nmap scan:
+
 21/tcp  open  ftp        vsftpd 3.0.3
 22/tcp  open  ssh        OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
 80/tcp  open  http       Apache httpd 2.4.29 ((Ubuntu))
