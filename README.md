@@ -37,7 +37,7 @@ result:
 Gobuster v3.6
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 ===============================================================
-[+] Url:                     http://10.10.125.237
+[+] Url:                     http://[IP HERE]
 [+] Method:                  GET
 [+] Threads:                 54
 [+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
