@@ -33,21 +33,8 @@ dir: specify we want to bruteforce directiories.
 -x: look for filees with exstinsions.
 
 result: 
-===============================================================
-Gobuster v3.6
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
-===============================================================
-[+] Url:                     http://[IP HERE]
-[+] Method:                  GET
-[+] Threads:                 54
-[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-[+] Negative Status codes:   404
-[+] User Agent:              gobuster/3.6
-[+] Extensions:              php,txt,html
-[+] Timeout:                 10s
-===============================================================
-Starting gobuster in directory enumeration mode
-===============================================================
+
+
 /.php                 (Status: 403) [Size: 278]
 /.html                (Status: 403) [Size: 278]
 /index.html           (Status: 200) [Size: 1466]
