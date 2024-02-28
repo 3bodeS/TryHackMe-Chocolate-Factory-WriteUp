@@ -1,4 +1,4 @@
-![image](https://github.com/3bodeS/TryHackMe-Chocolate-Factory-WriteUp/assets/62934084/39c5fee3-85d2-4798-b105-98e14ac50bea)# TryHackMe-Chocolate-Factory-WriteUp
+# TryHackMe-Chocolate-Factory-WriteUp
 TryHackMe Chocolate Factory WriteUp
 
 first we scan the machine using nmap using the command: nmap -sV [IP HERE]
